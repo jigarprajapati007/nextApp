@@ -63,6 +63,7 @@ export const PokemonListComponent = ({ pokemonList }: any) => {
           <div className="flex-col sm:flex-row  gap-2  p-4 rounded-lg">
             <select
               id="categorySelect"
+              suppressHydrationWarning
               value={pokemonSel}
               onChange={(event) => handleChangeSelect(event)}
               className="!w-70 h-12 bg-white mb-5 sm:w-auto px-3 py-2 border rounded-md text-gray-700"
@@ -78,6 +79,7 @@ export const PokemonListComponent = ({ pokemonList }: any) => {
             </select>
             <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden">
               <input
+                suppressHydrationWarning
                 id="nameInput"
                 value={pokemon}
                 type="text"
@@ -86,6 +88,7 @@ export const PokemonListComponent = ({ pokemonList }: any) => {
                 className=" flex-1 h-12 bg-white border-none px-3 py-2 border rounded-md rounded-tr-none rounded-br-none focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <button
+                suppressHydrationWarning
                 className="px-4 py-2 h-12 bg-[#1D4CA2] rounded-tl-none rounded-bl-none  text-white rounded-md  transition duration-300"
                 onClick={clickEventHandle}
               >
@@ -94,6 +97,7 @@ export const PokemonListComponent = ({ pokemonList }: any) => {
             </div>
 
             <button
+              suppressHydrationWarning
               className="mt-10 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300"
               onClick={clickEventHandleReset}
             >
@@ -109,6 +113,7 @@ export const PokemonListComponent = ({ pokemonList }: any) => {
                 index: number
               ) => (
                 <Link
+                  suppressHydrationWarning
                   key={index}
                   href={`/pokemonapp/${item.value.id}`}
                   className="cursor-pointer h-100 bg-white rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition duration-300"
@@ -121,7 +126,10 @@ export const PokemonListComponent = ({ pokemonList }: any) => {
                   <h3 className="mt-20 text-justify text-lg font-semibold">
                     {item.value.name}
                   </h3>
-                  <p className="text-justify mt-10 text-[#3877C4]"> {"Details →"}</p>
+                  <p className="text-justify mt-10 text-[#3877C4]">
+                    {" "}
+                    {"Details →"}
+                  </p>
                 </Link>
               )
             )
