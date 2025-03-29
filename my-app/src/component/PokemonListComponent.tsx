@@ -65,7 +65,7 @@ export const PokemonListComponent = ({ pokemonList }: any) => {
               id="categorySelect"
               value={pokemonSel}
               onChange={(event) => handleChangeSelect(event)}
-              className="!w-70 bg-white mb-5 sm:w-auto px-3 py-2 border rounded-md text-gray-700"
+              className="!w-70 h-12 bg-white mb-5 sm:w-auto px-3 py-2 border rounded-md text-gray-700"
             >
               <option>Select(All)</option>
               {pokemonDataselect?.map((item, index) => {
