@@ -1,6 +1,6 @@
 "use client";
 import React, { ChangeEvent, useState } from "react";
-import { useApiCall } from "@/hooks/useApiCall";
+
 import Link from "next/link";
 export const PokemonListComponent = ({ pokemonList }: any) => {
   const [pokemonData, setPokemonData] =

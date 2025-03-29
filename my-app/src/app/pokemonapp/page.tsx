@@ -20,7 +20,6 @@ async function getPokemon() {
 
 export const page = async () => {
   const pokemonList: any = await getPokemon();
-  console.log("hiral",pokemonList)
   return <PokemonListComponent pokemonList={pokemonList} />;
 };
 export default page;
