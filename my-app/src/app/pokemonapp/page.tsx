@@ -2,11 +2,15 @@ import { PokemonListComponent } from "@/component/PokemonListComponent";
 import React from "react";
 
 async function getPokemon() {
-  const res = await fetch("https://pokeapi.co/api/v2/pokemon/?limit=100");
+  const res = await fetch("https://pokeapi.co/api/v2/pokemon/?limit=100", {
+    cache: "no-store", // Always fetch fresh data
+  });
   let pokemonList = await res.json();
   let data = await Promise.allSettled(
     pokemonList?.results?.map(async (pokemon: any) => {
-      const detailsResponse = await fetch(pokemon.url);
+      const detailsResponse = await fetch(pokemon.url, {
+        cache: "no-store", // Always fetch fresh data
+      });
       const details: any = await detailsResponse.json();
       return {
         name: pokemon.name as string,
